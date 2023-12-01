@@ -1,3 +1,7 @@
+:root{
+  --darkteal: #00ffea76;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -12,6 +16,9 @@ body{
     background-image: url(/assets/dimdenbglol.png);
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #rainBackgroundContainer {
@@ -36,4 +43,60 @@ body{
     }
   }
   
+  #playButton {
+    background-color: #1d3848; /* Green background */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace; /* Retro font */
+  }
+  
+  #playButton:hover {
+    background-color: var(--darkteal);
+  }
+
+
+  /* header */
+
+  header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  header{
+    font-size: 1rem;
+  }
+
+  h1 {
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace; 
+    color: #00ffea76; 
+    text-align: center;
+    font-size: 3em; 
+    text-shadow:
+      0 0 5px var(--darkteal), 
+      0 0 10px var(--darkteal),
+      0 0 15px var(--darkteal), 
+      0 0 20px var(--darkteal); 
+    letter-spacing: 5px; 
+  }
+  
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+  
+  h1 {
+    animation: flicker 2s infinite alternate;
+  }
+
   
