@@ -1,5 +1,6 @@
 :root{
   --darkteal: #00ffea76;
+  --snail: #2c9080;
 }
 
 *{
@@ -7,7 +8,6 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    list-style: none;
     color: white;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -55,7 +55,7 @@ body{
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 8px;
-    font-family: 'Courier New', Courier, monospace; /* Retro font */
+    font-family: 'Courier New', Courier, monospace;
   }
   
   #playButton:hover {
@@ -73,30 +73,118 @@ body{
   }
 
   header{
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
-  h1 {
+  header>div> h1 {
     cursor: pointer;
-    font-family: 'Courier New', Courier, monospace; 
-    color: #00ffea76; 
+    font-family: 'Courier New', Courier, monospace;
+    color: #00ffea76;
     text-align: center;
-    font-size: 3em; 
+    font-size: 3em;
     text-shadow:
-      0 0 5px var(--darkteal), 
+      0 0 5px var(--darkteal),
       0 0 10px var(--darkteal),
-      0 0 15px var(--darkteal), 
-      0 0 20px var(--darkteal); 
-    letter-spacing: 5px; 
+      0 0 15px var(--darkteal),
+      0 0 20px var(--darkteal);
+    letter-spacing: 5px;
+    position: relative; 
+    display: inline-block; 
+    margin: 0 auto; 
   }
+  
+  header>div> h1::before {
+    content: '';
+    display: block;
+    width: 2px; 
+    height: 20px; 
+    background-color: #ffff00; 
+    position: absolute;
+    left: 50%; 
+    bottom: -20px; 
+    transform: translateX(-50%);
+  }
+  
+  header>div> h1::after {
+    content: '';
+    display: block;
+    width: 550px; 
+    height: 2px;
+    background-color: #ffff00;
+    position: absolute;
+    left: 50%; 
+    bottom: -20px; 
+    transform: translateX(-1px); 
+  }
+  
+  
   
   @keyframes flicker {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.6; }
   }
   
-  h1 {
+  header>div> h1 {
     animation: flicker 2s infinite alternate;
   }
 
+
+
+  /* box1 */
+
+  .box1{
+    border-radius: 5px;
+    border: 2px solid rgb(59, 59, 59);
+    margin-top: 30px;
+    padding: 5px 30px;
+  }
+
+  /* box1 top content - h1 and moon icon */
+  .box1> h1{
+    color: #2c9080; 
+    text-shadow: 0 0 5px #2c9080; 
+    font-family: 'Courier New', monospace;
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+  }
   
+  .moon-icon {
+    width: 30px; 
+    height: auto; 
+  }
+
+  .moon-icon:hover{
+    transition: 2s;
+    transform: rotate(180deg);
+  }
+  
+
+ .content>.left>img{
+    border: 1.5px solid #297c5c;
+    width: 120px;
+    height: 120px;
+
+  }
+  
+
+  .content{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content>.right{
+    padding: 6px 20px;
+  }
+
+  .content>.right>p:nth-child(2){
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  ul{
+    padding-left: 50px;
+  }
+
